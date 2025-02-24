@@ -1,0 +1,26 @@
+name: Crave Download, Staticx Install and Upload
+
+on:
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+      - name: Download Crave Binary
+        run: |
+          curl -L -o crave-0.2-7064-linux-aarch64.bin https://github.com/accupara/crave/releases/download/0.2-7064/crave-0.2-7064-linux-aarch64.bin
+          chmod +x crave-0.2-7064-linux-aarch64.bin # Make the binary executable
+
+      - name: Install staticx
+        run: pip3 install staticx
+
+      - name: Run staticx
+        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin
+
+      - name: Upload staticx Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: crave-staticx-bin
+          path: crave-staticx.bin
