@@ -37,4 +37,4 @@ export RBE_LINT_POOL=default
 export RBE_use_rpc_credentials=false
 export RBE_service_no_auth=true
 breakfast gsi_arm64 userdebug
-mka systemimage -j8
+mka systemimage -j12
