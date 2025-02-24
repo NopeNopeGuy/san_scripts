@@ -1,7 +1,7 @@
-name: Crave Download, Staticx Install and Upload
+name: Crave Download, Staticx Install and Upload to bashupload.com
 
 on:
-  workflow_dispatch: # Allows manual triggering of the workflow
+  workflow_dispatch:
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
       - name: Download Crave Binary
         run: |
           curl -L -o crave-0.2-7064-linux-aarch64.bin https://github.com/accupara/crave/releases/download/0.2-7064/crave-0.2-7064-linux-aarch64.bin
-          chmod +x crave-0.2-7064-linux-aarch64.bin # Make the binary executable
+          chmod +x crave-0.2-7064-linux-aarch64.bin
 
       - name: Install SCons
         run: sudo apt-get update && sudo apt-get install -y scons
@@ -22,8 +22,11 @@ jobs:
       - name: Run staticx
         run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin
 
-      - name: Upload staticx Binary
-        uses: actions/upload-artifact@v4
-        with:
-          name: crave-staticx-bin
-          path: crave-staticx.bin
+      - name: Upload to bashupload.com
+        id: upload
+        run: |
+          URL=$(curl -s -F "file=@crave-staticx.bin" https://bashupload.com)
+          echo "url=$URL" >> $GITHUB_OUTPUT
+
+      - name: Print bashupload.com URL
+        run: echo "Download from bashupload.com: ${{ steps.upload.outputs.url }}"
