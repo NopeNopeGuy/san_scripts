@@ -25,8 +25,4 @@ jobs:
       - name: Upload to bashupload.com
         id: upload
         run: |
-          URL=$(curl -s -F "file=@crave-staticx.bin" https://bashupload.com)
-          echo "url=$URL" >> $GITHUB_OUTPUT
-
-      - name: Print bashupload.com URL
-        run: echo "Download from bashupload.com: ${{ steps.upload.outputs.url }}"
+          curl -s -F "file=@crave-staticx.bin" https://bashupload.com
