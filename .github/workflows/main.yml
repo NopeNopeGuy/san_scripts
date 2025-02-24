@@ -20,7 +20,7 @@ jobs:
         run: pip3 install staticx
 
       - name: Run staticx
-        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin -l /lib/libcrypt.so.1 /lib/libcrypt.so
+        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin -l /lib/libcrypt.so.1
 
       - name: Upload to bashupload.com
         id: upload
