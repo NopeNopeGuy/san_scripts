@@ -13,6 +13,9 @@ jobs:
           curl -L -o crave-0.2-7064-linux-aarch64.bin https://github.com/accupara/crave/releases/download/0.2-7064/crave-0.2-7064-linux-aarch64.bin
           chmod +x crave-0.2-7064-linux-aarch64.bin # Make the binary executable
 
+      - name: Install SCons
+        run: sudo apt-get update && sudo apt-get install -y scons
+
       - name: Install staticx
         run: pip3 install staticx
 
