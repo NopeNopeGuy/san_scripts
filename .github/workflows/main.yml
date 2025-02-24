@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y scons
 
       - name: Link
-        run: ln -s /lib/libcrypto.so /lib/libcrypto.so.1
+        run: sudo ln -s /lib/libcrypto.so /lib/libcrypto.so.1
 
       - name: Install staticx
         run: pip3 install staticx
