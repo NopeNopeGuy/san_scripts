@@ -14,7 +14,7 @@ jobs:
           chmod +x crave-0.2-7064-linux-aarch64.bin
 
       - name: Install SCons
-        run: sudo apt-get update && sudo apt-get install -y scons libcrypt1
+        run: sudo apt-get update && sudo apt-get install -y scons libxcrypt
 
       - name: Install staticx
         run: pip3 install staticx
