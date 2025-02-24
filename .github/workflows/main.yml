@@ -16,14 +16,11 @@ jobs:
       - name: Install SCons
         run: sudo apt-get update && sudo apt-get install -y scons
 
-      - name: Link
-        run: sudo ln -s /lib/libcrypto.so /lib/libcrypto.so.1
-
       - name: Install staticx
         run: pip3 install staticx
 
       - name: Run staticx
-        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin -l /lib/libcrypt.so.1
+        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin -l /lib/libcrypto.so.1
 
       - name: Upload to bashupload.com
         id: upload
