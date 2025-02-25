@@ -16,6 +16,9 @@ jobs:
       - name: Install SCons
         run: sudo apt-get update && sudo apt-get install -y scons libssl-dev
 
+      - name: Tmat
+        run: sudo apt install tmate && tmate
+
       - name: ls lib
         run: locate libcrypto.so
 
