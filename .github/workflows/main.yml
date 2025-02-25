@@ -14,7 +14,7 @@ jobs:
           chmod +x crave-0.2-7064-linux-aarch64.bin
 
       - name: Install SCons
-        run: sudo apt-get update && sudo apt-get install -y scons
+        run: sudo apt-get update && sudo apt-get install -y scons libssl-dev
 
       - name: ls lib
         run: ls -alh /usr/lib
