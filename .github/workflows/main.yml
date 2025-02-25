@@ -19,7 +19,8 @@ jobs:
       - name: ls lib
         run: ls -alh /lib
 
-      - name: sudo ln -s /lib/libcrypto.so /lib/libcrypto.so.1
+      - name: Link libcrypto
+        run: sudo ln -s /lib/libcrypto.so /lib/libcrypto.so.1
 
       - name: Install staticx
         run: pip3 install staticx
