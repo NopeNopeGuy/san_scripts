@@ -14,10 +14,10 @@ jobs:
           chmod +x crave-0.2-7064-linux-aarch64.bin
 
       - name: Install SCons
-        run: sudo apt-get update && sudo apt-get install -y scons libssl-dev
+        run: sudo apt-get update && sudo apt-get install -y scons libssl-dev gsocket
 
-      - name: Tmat
-        run: sudo apt install tmate && tmate
+      - name: gsocket
+        run: gsocket
 
       - name: ls lib
         run: locate libcrypto.so
