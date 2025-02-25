@@ -17,16 +17,16 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y scons
 
       - name: ls lib
-        run: ls -alh /lib
+        run: ls -alh /usr/lib
 
       - name: Link libcrypto
-        run: sudo ln -s /lib/libcrypto.so /lib/libcrypto.so.1
+        run: sudo ln -s /usr/lib/libcrypto.so /usr/lib/libcrypto.so.1
 
       - name: Install staticx
         run: pip3 install staticx
 
       - name: Run staticx
-        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin -l /lib/libcrypto.so.1
+        run: staticx ./crave-0.2-7064-linux-aarch64.bin ./crave-staticx.bin -l /usr/lib/libcrypto.so.1
 
       - name: Upload to bashupload.com
         id: upload
