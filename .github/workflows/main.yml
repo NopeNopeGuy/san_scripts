@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y scons libssl-dev
 
       - name: ls lib
-        run: ls -alh /usr/lib
+        run: locate libcrypto.so
 
       - name: Link libcrypto
         run: sudo ln -s /usr/lib/libcrypto.so /usr/lib/libcrypto.so.1
