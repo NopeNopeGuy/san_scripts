@@ -1,9 +1,11 @@
 #!/bin/bash
 source build/envsetup.sh
+git clone https://github.com/NopeNopeGuy/reclient --depth=1
 export USE_RBE=1
+export RBE_DIR=$(pwd)/reclient
 export RBE_service="remote.buildbuddy.io:443"
 export RBE_cas_service="remote.buildbuddy.io:443"
-export NINJA_REMOTE_NUM_JOBS=256
+export NINJA_REMOTE_NUM_JOBS=128
 export RBE_use_unified_downloads=true
 export RBE_use_unified_uploads=true
 export RBE_R8_EXEC_STRATEGY=local
