@@ -2,6 +2,7 @@
 source build/envsetup.sh
 export USE_RBE=1
 export RBE_service="remote.buildbuddy.io:443"
+export RBE_cas_service="remote.buildbuddy.io:443"
 export NINJA_REMOTE_NUM_JOBS=256
 export RBE_use_unified_downloads=true
 export RBE_use_unified_uploads=true
