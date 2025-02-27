@@ -1,13 +1,10 @@
 #!/bin/bash
+rm -rf out/
 source build/envsetup.sh
 git clone https://github.com/NopeNopeGuy/reclient --depth=1
 export USE_RBE=1
 export RBE_DIR=$(pwd)/reclient
 export NINJA_REMOTE_NUM_JOBS=8
-export RBE_use_unified_downloads=true
-export RBE_use_unified_uploads=true
-export RBE_remote_accept_cache=true
-export RBE_remote_update_cache=true
 export RBE_R8_EXEC_STRATEGY=local
 export RBE_D8_EXEC_STRATEGY=local
 export RBE_JAVAC_EXEC_STRATEGY=local
