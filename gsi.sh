@@ -35,10 +35,7 @@ export RBE_JAVA_POOL=default
 export RBE_METALAVA_POOL=default
 export RBE_LINT_POOL=default
 
-export CACHE_ADDRESS=cas-aditya-singh-a5bbbt.build-faster.nativelink.net:443
-export TLS_CLIENT_AUTH_CERT=client.crt
-export TLS_CLIENT_AUTH_KEY=client.key
-
+export CACHE_ADDRESS=$DCWEBDAV_SERVER:$DCWEBDAV_PORT
 # Leave below as is
 export RBE_service=${CACHE_ADDRESS}
 export RBE_cas_service=${CACHE_ADDRESS}
@@ -48,21 +45,15 @@ export RBE_exec_timeout=4m
 export RBE_alsologtostderr=true
 export RBE_service_no_security=false
 export RBE_local_resource_fraction=0.00001
-export RBE_automatic_auth=false
-export RBE_gcert_refresh_timeout=20
 export RBE_compression_threshold=-1
 export RBE_metrics_namespace=main
 export RBE_platform=
 export RBE_experimental_credentials_helper=
 export RBE_experimental_credentials_helper_args=
-export RBE_log_http_calls=true
-export RBE_use_rpc_credentials=true
 export RBE_exec_strategy=local
 export RBE_remote_disabled=false
-export RBE_tls_client_auth_cert=${TLS_CLIENT_AUTH_CERT}
-export RBE_tls_client_auth_key=${TLS_CLIENT_AUTH_KEY}
 export RBE_service_no_auth=true
-export RBE_use_application_default_credentials=true
+export RBE_use_rpc_credentials=false
 
 breakfast gsi_arm64 userdebug
 mka systemimage -j16
