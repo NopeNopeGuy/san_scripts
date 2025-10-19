@@ -1,9 +1,10 @@
 #!/bin/bash
+/opt/crave/resync.sh
 source build/envsetup.sh
 git clone https://github.com/NopeNopeGuy/reclient --depth=1
 export USE_RBE=1
 export RBE_DIR=$(pwd)/reclient
-export NINJA_REMOTE_NUM_JOBS=350
+export NINJA_REMOTE_NUM_JOBS=64
 export RBE_R8_EXEC_STRATEGY=local
 export RBE_D8_EXEC_STRATEGY=local
 export RBE_JAVAC_EXEC_STRATEGY=local
