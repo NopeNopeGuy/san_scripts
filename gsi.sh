@@ -50,4 +50,4 @@ export RBE_service_no_auth=true
 export RBE_use_rpc_credentials=false
 
 breakfast gsi_arm64 userdebug
-mka systemimage -j16
+mka systemimage
