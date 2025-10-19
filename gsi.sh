@@ -1,5 +1,4 @@
 #!/bin/bash
-mka clean # RBE experimentation, will do GSI clean build first then a device build to see if there are cache hits across different build targets
 source build/envsetup.sh
 git clone https://github.com/NopeNopeGuy/reclient --depth=1
 export USE_RBE=1
