@@ -48,6 +48,7 @@ export RBE_exec_strategy=local
 export RBE_remote_disabled=false
 export RBE_service_no_auth=true
 export RBE_use_rpc_credentials=false
+export RBE_service_no_security=true
 
 breakfast gsi_arm64 userdebug
 mka systemimage
